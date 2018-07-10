@@ -7,7 +7,7 @@ var imageManagerInput = {
 		//create modal
 		imageManagerInput.initModal();
 	},
-	//creat image Manager modal
+	//create image Manager modal
 	initModal: function(){
 		//check if modal not jet exists
 		if($("#modal-imagemanager").length === 0){
@@ -20,7 +20,7 @@ var imageManagerInput = {
 							sModalHtml += '<h4>Image manager</h4>';
 						sModalHtml += '</div>';
 						sModalHtml += '<div class="modal-body">';
-							sModalHtml += '<iframe src="#"></iframe>';
+							// sModalHtml += '<iframe src="'+imageManagerInput.baseUrl+'"></iframe>';
 						sModalHtml += '</div>';
 					sModalHtml += '</div>';
 				sModalHtml += '</div>';
@@ -41,9 +41,9 @@ var imageManagerInput = {
 		var queryStringStartCharacter = ((imageManagerInput.baseUrl).indexOf('?') == -1) ? '?' : '&';
 		var imageManagerUrl = imageManagerInput.baseUrl+queryStringStartCharacter+"view-mode=iframe&input-id="+inputId+"&aspect-ratio="+aspectRatio+"&crop-view-mode="+cropViewMode+srcImageIdQueryString;
 		//set iframe path
-		$("#modal-imagemanager iframe").attr("src",imageManagerUrl);
-                //set translation title for modal header
-                $("#modal-imagemanager .modal-dialog .modal-header h4").text(imageManagerInput.message.imageManager); 
+        $("#modal-imagemanager .modal-body").html('<iframe src="'+imageManagerUrl+'"></iframe>');
+		//set translation title for modal header
+		$("#modal-imagemanager .modal-dialog .modal-header h4").text(imageManagerInput.message.imageManager);
 		//open modal
 		$("#modal-imagemanager").modal("show");
 	},
