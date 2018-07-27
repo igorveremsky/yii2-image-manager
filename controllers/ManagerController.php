@@ -81,10 +81,11 @@ class ManagerController extends Controller {
 			}
 		}
 
-		//set baseUrl from image manager
-		$sBaseUrl = Url::to(['/imagemanager/manager']);
 		//set base url
-		$this->view->registerJs("imageManagerModule.baseUrl = '" . $sBaseUrl . "';", 3);
+		$this->view->registerJs("imageManagerModule.viewUrl = '" . Url::to(['/imagemanager/manager/view']) . "';", 3);
+		$this->view->registerJs("imageManagerModule.getOriginalImageUrl = '" . Url::to(['/imagemanager/manager/get-original-image']) . "';", 3);
+		$this->view->registerJs("imageManagerModule.cropUrl = '" . Url::to(['/imagemanager/manager/crop']) . "';", 3);
+		$this->view->registerJs("imageManagerModule.deleteUrl = '" . Url::to(['/imagemanager/manager/delete']) . "';", 3);
 		$this->view->registerJs("imageManagerModule.defaultImageId = '" . $defaultImageId . "';", 3);
 		$this->view->registerJs("imageManagerModule.fieldId = '" . $inputFieldId . "';", 3);
 		$this->view->registerJs("imageManagerModule.cropRatio = '" . $cropAspectRatio . "';", 3);

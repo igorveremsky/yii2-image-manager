@@ -72,7 +72,7 @@ var imageManagerModule = {
 				if(imageManagerModule.selectedImage !== null){
 					//call action by ajax
 					$.ajax({
-						url: imageManagerModule.baseUrl+"/get-original-image",
+						url: imageManagerModule.getOriginalImageUrl,
 						type: "POST",
 						data: {
 							ImageManager_id: imageManagerModule.selectedImage.id,
@@ -114,7 +114,7 @@ var imageManagerModule = {
 			if(imageManagerModule.selectedImage !== null){
 				//call action by ajax
 				$.ajax({
-					url: imageManagerModule.baseUrl+"/delete",
+					url: imageManagerModule.deleteUrl,
 					type: "POST",
 					data: {
 						ImageManager_id: imageManagerModule.selectedImage.id,
@@ -150,7 +150,7 @@ var imageManagerModule = {
 		pickAfterGetDetails = pickAfterGetDetails !== undefined ? pickAfterGetDetails : false;
 		//call action by ajax
 		$.ajax({
-			url: imageManagerModule.baseUrl+"/view",
+			url: imageManagerModule.viewUrl,
 			type: "POST",
 			data: {
 				ImageManager_id: id,
@@ -209,7 +209,7 @@ var imageManagerModule = {
 			if(imageManagerModule.selectedImage !== null){
 				//call action by ajax
 				$.ajax({
-					url: imageManagerModule.baseUrl+"/get-original-image",
+					url: imageManagerModule.getOriginalImageUrl,
 					type: "POST",
 					data: {
 						ImageManager_id: imageManagerModule.selectedImage.id,
@@ -248,7 +248,7 @@ var imageManagerModule = {
 				var oCropData = $('#module-imagemanager > .row .col-image-editor .image-cropper .image-wrapper img#image-cropper').cropper("getData");
 				//call action by ajax
 				$.ajax({
-					url: imageManagerModule.baseUrl+"/crop",
+					url: imageManagerModule.cropUrl,
 					type: "POST",
 					data: {
 						ImageManager_id: imageManagerModule.selectedImage.id,
