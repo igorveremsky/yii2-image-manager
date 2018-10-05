@@ -81,7 +81,8 @@ $(document).ready(function () {
 	imageManagerInput.init();
 	
 	//open media manager modal
-	$(document).on("click", ".open-modal-imagemanager", function () {
+	$(document).on("click", ".open-modal-imagemanager", function (e) {
+		e.preventDefault();
 		var aspectRatio = $(this).data("aspect-ratio");
 		var cropViewMode = $(this).data("crop-view-mode");
 		var inputId = $(this).data("input-id");
